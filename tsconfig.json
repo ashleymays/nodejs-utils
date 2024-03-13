@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist",
+    "strict": true,
+    "module": "NodeNext",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "target": "ES6",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true
+  },
+  "include": ["./src/index.ts"],
+  "exclude": ["node_modules", "./dist/*"]
+}
