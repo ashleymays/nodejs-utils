@@ -1,10 +1,10 @@
-import type { RequestHandler, Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from "express";
 
 type AsyncRequestHandler = (
   req: Request,
   res: Response,
-  next: NextFunction,
-) => Promise<RequestHandler>;
+  next?: NextFunction,
+) => Promise<void>;
 
 /**
  * Wraps an asynchronous request handler inside a try-catch block and calls
