@@ -1,4 +1,4 @@
-## @ashleymays/utils
+## @ashleymays/nodejs-utils
 
 A collection of utility functions and other useful code snippets for Node.js and Express.js projects.
 

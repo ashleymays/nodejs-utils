@@ -1,3 +1,7 @@
+export interface CustomError extends Error {
+  statusCode: number;
+}
+
 /**
  * Indicates that a resource was not found.
  *
@@ -7,13 +11,13 @@
  * new NotFoundError('User was not found.'); // message is 'User was not found.'
  */
 export class NotFoundError extends Error {
-  code: number;
+  statusCode: number;
 
   constructor(message = "The resource you requested was not found.") {
     super();
     this.message = message;
     this.name = "NotFoundError";
-    this.code = 404;
+    this.statusCode = 404;
   }
 }
 /**
@@ -25,13 +29,13 @@ export class NotFoundError extends Error {
  * new InvalidInputError('Email cannot be null.'); // message is 'Email cannot be null.'
  */
 export class InvalidInputError extends Error {
-  code: number;
+  statusCode: number;
 
   constructor(message = "Invalid or missing input provided.") {
     super();
     this.message = message;
     this.name = "InvalidInputError";
-    this.code = 400;
+    this.statusCode = 400;
   }
 }
 /**
@@ -43,13 +47,13 @@ export class InvalidInputError extends Error {
  * new UnauthorizedError('Please log in.'); // message is 'Please log in.'
  */
 export class UnauthorizedError extends Error {
-  code: number;
+  statusCode: number;
 
   constructor(message = "You are not authorized to access this resource.") {
     super();
     this.message = message;
     this.name = "UnauthorizedError";
-    this.code = 401;
+    this.statusCode = 401;
   }
 }
 /**
@@ -63,12 +67,12 @@ export class UnauthorizedError extends Error {
  * new GeneralError('There was a problem.'); // message is 'There was a problem.'
  */
 export class GeneralError extends Error {
-  code: number;
+  statusCode: number;
 
   constructor(message = "Something went wrong.") {
     super();
     this.message = message;
     this.name = "GeneralError";
-    this.code = 500;
+    this.statusCode = 500;
   }
 }
