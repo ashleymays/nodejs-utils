@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "build": "npm i && tsc --project tsconfig.json",
-    "format": "prettier . --write"
+    "format": "prettier \"./src/**/*.ts\" --write"
   },
   "files": [
     "dist/"
