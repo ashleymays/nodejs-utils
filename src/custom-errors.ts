@@ -4,6 +4,8 @@ export interface CustomError extends Error {
 
 /**
  * Indicates that a resource was not found.
+ * 
+ * The status code is `404`.
  *
  * @class
  * @example
@@ -22,6 +24,8 @@ export class NotFoundError extends Error {
 }
 /**
  * Indicates that any provided input was invalid.
+ * 
+ * The status code is `400`.
  *
  * @class
  * @example
@@ -32,14 +36,16 @@ export class InvalidInputError extends Error {
   statusCode: number;
 
   constructor(message = "Invalid or missing input provided.") {
-    super();
-    this.message = message;
+    super(message);
     this.name = "InvalidInputError";
     this.statusCode = 400;
   }
 }
+
 /**
  * Indicates that a user is unauthorized.
+ * 
+ * The status code is `401`.
  *
  * @class
  * @example
@@ -50,16 +56,18 @@ export class UnauthorizedError extends Error {
   statusCode: number;
 
   constructor(message = "You are not authorized to access this resource.") {
-    super();
-    this.message = message;
+    super(message);
     this.name = "UnauthorizedError";
     this.statusCode = 401;
   }
 }
+
 /**
  * Indicates that there was an unspecified issue server-side.
  *
  * Should be used sparingly. Prefer a more specific type of error in most cases.
+ * 
+ * The status code is `500`.
  *
  * @class
  * @example
@@ -70,8 +78,7 @@ export class GeneralError extends Error {
   statusCode: number;
 
   constructor(message = "Something went wrong.") {
-    super();
-    this.message = message;
+    super(message);
     this.name = "GeneralError";
     this.statusCode = 500;
   }
