@@ -1,9 +1,9 @@
-import type { Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from 'express';
 
 type AsyncRequestHandler = (
   req: Request,
   res: Response,
-  next?: NextFunction,
+  next?: NextFunction
 ) => Promise<void>;
 
 /**
@@ -18,7 +18,7 @@ export const catchErrors = (asyncFn: AsyncRequestHandler) => {
   return async (
     req: Request,
     res: Response,
-    next: NextFunction,
+    next: NextFunction
   ): Promise<void> => {
     try {
       await asyncFn(req, res, next);
